@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  resources :users do 
-    member do
-      get 'sign_in'
-    end
-  end
+  devise_for :users
+  resources :users 
 
-  root 'users#sign_in'
+  root 'users#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
